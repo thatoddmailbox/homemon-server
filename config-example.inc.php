@@ -5,3 +5,5 @@ const DATABASE_PASSWORD = "password";
 const DATABASE_NAME = "homemon";
 
 const IP_FORWARDING_HEADER = "";
+
+const REPORT_TOKEN = "(change this)";
