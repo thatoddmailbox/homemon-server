@@ -9,7 +9,7 @@ function write_response($response) {
 	die();
 }
 
-$providedToken = $_POST["token"];
+$providedToken = $_SERVER["HTTP_X_TOKEN"];
 if ($providedToken == "" || !hash_equals(REPORT_TOKEN, $providedToken)) {
 	write_response(array(
 		"status" => "error",
