@@ -18,13 +18,12 @@ if ($providedToken == "" || !hash_equals(REPORT_TOKEN, $providedToken)) {
 }
 
 $poweredInput = $_GET["p"];
-if ($poweredInput != "0" && $poweredInput != "1") {
+if ($poweredInput != "0" && $poweredInput != "1" && $poweredInput != "-1") {
 	write_response(array(
 		"status" => "error",
 		"error" => "invalid_params"
 	));
 }
-$powered = ($poweredInput == "1");
 
 $batteryLevelInput = $_GET["b"];
 if (!is_numeric($batteryLevelInput)) {
@@ -49,7 +48,7 @@ $timestamp = time();
 
 $stmt = $db->prepare("INSERT INTO reports(powered, batteryLevel, batteryVoltage, ip, `timestamp`) VALUES(?, ?, ?, ?, ?)");
 $stmt->execute(array(
-	$powered ? "1" : "0",
+	$poweredInput,
 	$batteryLevel,
 	$batteryVoltage,
 	$ip,
