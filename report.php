@@ -46,12 +46,14 @@ $batteryVoltage = intval($batteryVoltageInput);
 $ip = get_ip_address();
 $timestamp = time();
 
-$stmt = $db->prepare("INSERT INTO reports(powered, batteryLevel, batteryVoltage, ip, `timestamp`) VALUES(?, ?, ?, ?, ?)");
+$stmt = $db->prepare("INSERT INTO reports(powered, batteryLevel, batteryVoltage, ip, transport, clientTimestamp, `timestamp`) VALUES(?, ?, ?, ?, ?, ?, ?)");
 $stmt->execute(array(
 	$poweredInput,
 	$batteryLevel,
 	$batteryVoltage,
 	$ip,
+	0,
+	$timestamp,
 	$timestamp
 ));
 
