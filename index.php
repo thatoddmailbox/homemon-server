@@ -1,6 +1,7 @@
 <?php require_once("auth.inc.php"); ?>
 <?php require_once("header.inc.php"); ?>
 <?php
+require_once("data.inc.php");
 require_once("util.inc.php");
 
 const TIMEOUT_INTERVAL_SECONDS = 20 * 60;

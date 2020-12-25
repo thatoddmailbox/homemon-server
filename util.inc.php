@@ -1,5 +1,4 @@
 <?php
-require_once("db.inc.php");
 date_default_timezone_set("America/New_York");
 
 function get_ip_address() {
@@ -11,15 +10,6 @@ function get_ip_address() {
 	}
 
 	return $_SERVER["REMOTE_ADDR"];
-}
-
-function get_last_checkin() {
-	global $db;
-	$result = $db->query("SELECT * FROM reports ORDER BY clientTimestamp DESC LIMIT 1")->fetchAll(PDO::FETCH_ASSOC);
-	if (count($result) == 0) {
-		return null;
-	}
-	return $result[0];
 }
 
 // based off of https://stackoverflow.com/questions/9619823/php-how-do-i-calculate-relative-time
