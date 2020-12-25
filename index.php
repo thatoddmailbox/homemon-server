@@ -44,7 +44,14 @@ $recentCheckins = get_recent_checkins();
 						<?php } else { ?>
 							<td><?php echo htmlspecialchars($checkin["batteryVoltage"] / 1000) ?> V</td>
 						<?php } ?>
-						<td><?php echo htmlspecialchars($checkin["ip"]) ?></td>
+						<td>
+							<?php echo htmlspecialchars($checkin["ip"]) ?>
+							(<?php if ($checkin["transport"] == 1) {
+								echo "UDP";
+							} else {
+								echo "HTTP";
+							} ?>)
+						</td>
 					</tr>
 				<?php } ?>
 			</tbody>
