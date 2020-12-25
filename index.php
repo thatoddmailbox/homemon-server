@@ -10,7 +10,7 @@ $recentCheckins = get_recent_checkins();
 <div class="container">
 	<div class="mainInfo">
 		<div class="mainInfoHeader display-6">
-			<i class="bi bi-lg bi-<?php echo $state["status"]["icon"]; ?>-circle"></i> Your home is <em><?php echo $state["status"]["text"]; ?></em>.
+			<i class="bi bi-lg bi-<?php echo $state["status"]["icon"]; ?>-circle"></i> Your home is <em style="color: <?php echo $state["status"]["color"]; ?>;"><?php echo $state["status"]["text"]; ?></em>.
 		</div>
 		<div class="mainInfoSubheader lead">
 			Last checkin: <?php echo $state["lastCheckinDisplay"]; ?>

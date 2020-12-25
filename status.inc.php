@@ -23,13 +23,16 @@ function get_home_state() {
 	$status = ($isOnline ?
 		($isPowered ? array(
 			"icon" => "check2",
-			"text" => "online"
+			"text" => "online",
+			"color" => "green"
 		) : array(
 			"icon" => "exclamation",
-			"text" => "not powered"
+			"text" => "not powered",
+			"color" => "yellow"
 		)) : array(
 			"icon" => "x",
-			"text" => "completely offline"
+			"text" => "completely offline",
+			"color" => "red"
 		)
 	);
 
