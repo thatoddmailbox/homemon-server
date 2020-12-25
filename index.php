@@ -11,23 +11,35 @@ $lastCheckinDisplay = "unknown";
 $currentTimestamp = time();
 
 $isOnline = false;
+$isPowered = false;
 if ($lastCheckin != null) {
 	if (abs($lastCheckin["clientTimestamp"] - $currentTimestamp) < TIMEOUT_INTERVAL_SECONDS) {
 		$isOnline = true;
+		$isPowered = ($lastCheckin["powered"] == 1);
 	}
 
 	$lastCheckinDisplay = relative_time_html($lastCheckin["clientTimestamp"]);
 }
 
-$statusText = ($isOnline ? "online" : "offline");
-$statusIcon = ($isOnline ? "check2" : "exclamation");
+$status = ($isOnline ?
+	($isPowered ? array(
+		"icon" => "check2",
+		"text" => "online"
+	) : array(
+		"icon" => "exclamation",
+		"text" => "not powered"
+	)) : array(
+		"icon" => "x",
+		"text" => "completely offline"
+	)
+);
 
 $recentCheckins = get_recent_checkins();
 ?>
 <div class="container">
 	<div class="mainInfo">
 		<div class="mainInfoHeader display-6">
-			<i class="bi bi-lg bi-<?php echo $statusIcon; ?>-circle"></i> Your home is <em><?php echo $statusText; ?></em>.
+			<i class="bi bi-lg bi-<?php echo $status["icon"]; ?>-circle"></i> Your home is <em><?php echo $status["text"]; ?></em>.
 		</div>
 		<div class="mainInfoSubheader lead">
 			Last checkin: <?php echo $lastCheckinDisplay; ?>
