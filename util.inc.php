@@ -1,5 +1,6 @@
 <?php
 require_once("db.inc.php");
+date_default_timezone_set("America/New_York");
 
 function get_ip_address() {
 	if (IP_FORWARDING_HEADER != "") {
