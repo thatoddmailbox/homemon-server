@@ -53,15 +53,19 @@ $recentCheckins = get_recent_checkins();
 				<tr>
 					<th scope="col">Time</th>
 					<th scope="col">Powered?</th>
+					<th scope="col">Battery level</th>
+					<th scope="col">Battery voltage</th>
+					<th scope="col">IP</th>
 				</tr>
 			</thead>
 			<tbody>
 				<?php foreach ($recentCheckins as $checkin) { ?>
 					<tr>
 						<td><?php echo relative_time_html($checkin["clientTimestamp"]); ?></td>
-						<td>
-							<?php echo ($checkin["powered"] == 1 ? "yes" : "no"); ?>
-						</td>
+						<td><?php echo ($checkin["powered"] == 1 ? "yes" : "no"); ?></td>
+						<td><?php echo htmlspecialchars($checkin["batteryLevel"]) ?></td>
+						<td><?php echo htmlspecialchars($checkin["batteryVoltage"]) ?></td>
+						<td><?php echo htmlspecialchars($checkin["ip"]) ?></td>
 					</tr>
 				<?php } ?>
 			</tbody>
