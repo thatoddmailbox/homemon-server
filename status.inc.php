@@ -28,7 +28,7 @@ function get_home_state() {
 		) : array(
 			"icon" => "exclamation",
 			"text" => "not powered",
-			"color" => "yellow"
+			"color" => "orange"
 		)) : array(
 			"icon" => "x",
 			"text" => "completely offline",
