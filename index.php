@@ -63,8 +63,8 @@ $recentCheckins = get_recent_checkins();
 					<tr>
 						<td><?php echo relative_time_html($checkin["clientTimestamp"]); ?></td>
 						<td><?php echo ($checkin["powered"] == 1 ? "yes" : "no"); ?></td>
-						<td><?php echo htmlspecialchars($checkin["batteryLevel"]) ?></td>
-						<td><?php echo htmlspecialchars($checkin["batteryVoltage"]) ?></td>
+						<td><?php echo htmlspecialchars($checkin["batteryLevel"]) ?>%</td>
+						<td><?php echo htmlspecialchars($checkin["batteryVoltage"] / 1000) ?> V</td>
 						<td><?php echo htmlspecialchars($checkin["ip"]) ?></td>
 					</tr>
 				<?php } ?>
