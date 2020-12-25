@@ -21,6 +21,8 @@ if ($lastCheckin != null) {
 
 $statusText = ($isOnline ? "online" : "offline");
 $statusIcon = ($isOnline ? "check2" : "exclamation");
+
+$recentCheckins = get_recent_checkins();
 ?>
 <div class="container">
 	<div class="mainInfo">
@@ -30,6 +32,28 @@ $statusIcon = ($isOnline ? "check2" : "exclamation");
 		<div class="mainInfoSubheader lead">
 			Last checkin: <?php echo $lastCheckinDisplay; ?>
 		</div>
+	</div>
+
+	<div class="recentCheckins">
+		<h4>Recent checkins</h4>
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col">Time</th>
+					<th scope="col">Powered?</th>
+				</tr>
+			</thead>
+			<tbody>
+				<?php foreach ($recentCheckins as $checkin) { ?>
+					<tr>
+						<td><?php echo relative_time_html($checkin["clientTimestamp"]); ?></td>
+						<td>
+							<?php echo ($checkin["powered"] == 1 ? "yes" : "no"); ?>
+						</td>
+					</tr>
+				<?php } ?>
+			</tbody>
+		</table>
 	</div>
 </div>
 <?php require_once("footer.inc.php"); ?>
