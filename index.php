@@ -15,7 +15,7 @@ if ($lastCheckin != null) {
 		$isOnline = true;
 	}
 
-	$lastCheckinDisplay = date("Y-m-d\TH:i:s\Z", $lastCheckin["clientTimestamp"]);
+	$lastCheckinDisplay = relative_time_html($lastCheckin["clientTimestamp"]);
 }
 
 $statusText = ($isOnline ? "online" : "offline");
