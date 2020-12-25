@@ -1,0 +1,31 @@
+.bi {
+	margin: 0.25rem;
+}
+
+.bi-lg {
+	font-size: 2.75rem;
+}
+
+.container {
+	max-width: 800px;
+}
+
+.mainInfo {
+	text-align: center;
+	margin-top: 0.5rem;
+}
+
+.mainInfoHeader .bi {
+	vertical-align: bottom;
+}
+
+.mainInfoHeader em {
+	font-style: normal;
+	font-weight: normal;
+}
+
+.mainInfoSubheader {
+	font-size: 1.5rem;
+	font-style: italic;
+	margin-top: 0.25rem;
+}
