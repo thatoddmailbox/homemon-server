@@ -13,12 +13,12 @@ $recentCheckins = get_recent_checkins();
 			<i class="bi bi-lg bi-<?php echo $state["status"]["icon"]; ?>-circle"></i> Your home is <em style="color: <?php echo $state["status"]["color"]; ?>;"><?php echo $state["status"]["text"]; ?></em>.
 		</div>
 		<div class="mainInfoSubheader lead">
-			Last checkin: <?php echo $state["lastCheckinDisplay"]; ?>
+			Last check-in: <?php echo $state["lastCheckinDisplay"]; ?>
 		</div>
 	</div>
 
 	<div class="recentCheckins">
-		<h4>Recent checkins</h4>
+		<h4>Recent check-ins</h4>
 		<table class="table">
 			<thead>
 				<tr>
