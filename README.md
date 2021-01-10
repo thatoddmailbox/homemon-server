@@ -9,6 +9,7 @@ Requirements:
 * MySQL
 * [roamer](https://github.com/thatoddmailbox/roamer)
 
+Once you've set the requirements up, follow these steps:
 1. Download the code in this repository, and put it somewhere in your webserver's web root.
 2. Run `roamer setup` and fill in the created `roamer.local.toml` file with your database credentials.
 3. Run `roamer upgrade`.
