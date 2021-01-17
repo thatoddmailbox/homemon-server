@@ -12,12 +12,12 @@ function get_home_state() {
 	$isOnline = false;
 	$isPowered = false;
 	if ($lastCheckin != null) {
-		if (abs($lastCheckin["clientTimestamp"] - $currentTimestamp) < TIMEOUT_INTERVAL_SECONDS) {
+		if (abs($lastCheckin["timestamp"] - $currentTimestamp) < TIMEOUT_INTERVAL_SECONDS) {
 			$isOnline = true;
 			$isPowered = ($lastCheckin["powered"] == 1);
 		}
 
-		$lastCheckinDisplay = relative_time_html($lastCheckin["clientTimestamp"]);
+		$lastCheckinDisplay = relative_time_html($lastCheckin["timestamp"]);
 	}
 
 	$status = ($isOnline ?

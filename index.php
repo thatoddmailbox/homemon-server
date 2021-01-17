@@ -32,7 +32,7 @@ $recentCheckins = get_recent_checkins();
 			<tbody>
 				<?php foreach ($recentCheckins as $checkin) { ?>
 					<tr>
-						<td><?php echo relative_time_html($checkin["clientTimestamp"]); ?></td>
+						<td><?php echo relative_time_html($checkin["timestamp"]); ?></td>
 						<td><?php echo ($checkin["powered"] == 1 ? "yes" : "no"); ?></td>
 						<?php if ($checkin["batteryLevel"] == -1) { ?>
 							<td>error</td>

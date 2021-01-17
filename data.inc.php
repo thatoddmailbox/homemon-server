@@ -3,7 +3,7 @@ require_once("db.inc.php");
 
 function get_last_checkin() {
 	global $db;
-	$result = $db->query("SELECT * FROM reports ORDER BY clientTimestamp DESC LIMIT 1")->fetchAll(PDO::FETCH_ASSOC);
+	$result = $db->query("SELECT * FROM reports ORDER BY `timestamp` DESC LIMIT 1")->fetchAll(PDO::FETCH_ASSOC);
 	if (count($result) == 0) {
 		return null;
 	}
@@ -12,6 +12,6 @@ function get_last_checkin() {
 
 function get_recent_checkins() {
 	global $db;
-	$result = $db->query("SELECT * FROM reports ORDER BY clientTimestamp DESC LIMIT 10")->fetchAll(PDO::FETCH_ASSOC);
+	$result = $db->query("SELECT * FROM reports ORDER BY `timestamp` DESC LIMIT 10")->fetchAll(PDO::FETCH_ASSOC);
 	return $result;
 }
