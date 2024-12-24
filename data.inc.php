@@ -37,6 +37,13 @@ function get_push_device_by_uuid($uuid) {
 	return $results[0];
 }
 
+function delete_push_device($pushDevice) {
+	global $db;
+	$stmt = $db->prepare("DELETE FROM push_devices WHERE id = ?");
+	$stmt->execute(array($pushDevice["id"]));
+	return $uuid;
+}
+
 function update_push_device_last_verdict($pushDevice, $currentVerdict) {
 	global $db;
 	$stmt = $db->prepare("UPDATE push_devices SET lastVerdict = ? WHERE id = ?");
