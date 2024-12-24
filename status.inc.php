@@ -18,9 +18,9 @@ function get_modern_home_state() {
 	// * 1 = possible outage: no communication in the past 20 mins
 	// * 2 = on: have a positive report from the past 20 mins
 	// TODO: this sucks
-	$verdict = VERDICT_OFF;
+	$verdict = VERDICT_POSSIBLE_OUTAGE;
 	if ($state["status"]["text"] == "not powered") {
-		$verdict = VERDICT_POSSIBLE_OUTAGE;
+		$verdict = VERDICT_OFF;
 	} elseif ($state["status"]["text"] == "online") {
 		$verdict = VERDICT_ON;
 	}
