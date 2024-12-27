@@ -2,7 +2,7 @@
 require_once("data.inc.php");
 require_once("util.inc.php");
 
-const TIMEOUT_INTERVAL_SECONDS = 20 * 60;
+const TIMEOUT_INTERVAL_SECONDS = 24 * 60;
 
 const VERDICT_OFF = 0;
 const VERDICT_POSSIBLE_OUTAGE = 1;
